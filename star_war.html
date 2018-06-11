@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>star war wikipedia</title>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<style>
+	h1{
+		background-color: 	#373538;
+		color:	#f1eaee;
+		width:100%;
+		text-align: center;
+		font-size: 50px;
+        padding: 20px;
+
+
+	}
+  body{
+  	background-color: #b0aaad;
+  }	
+  #cola2{
+  	background-color: 	#373538;;
+		color:	#f1eaee;
+		text-align: center;
+  }
+  #cola{
+  	
+  	margin-bottom: 5px;
+  }
+  	
+</style>
+</head>
+<body>
+<h1>Star Wars Wikipedia</h1> 
+<div id="disp"></div>
+<script >
+	var htx = new XMLHttpRequest();
+	htx.onreadystatechange = function(){
+		if(this.readyState==4 && this.status==200){
+			var output = JSON.parse(htx.responseText);
+			console.log(output);
+                
+                var lenovo='';
+            
+               lenovo+=`
+							 <div class="  row d-flex justify-content-center">
+				<a href="detail.html?imdbID=0&img=https://vignette.wikia.nocookie.net/starwars/images/9/9f/Ep4_junior.jpg/revision/latest?cb=20060523171141">
+                        <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"   src="https://vignette.wikia.nocookie.net/starwars/images/9/9f/Ep4_junior.jpg/revision/latest?cb=20060523171141" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">A New Hope</p>
+				  </div>
+				</div>			               
+                </div></a>
+                  
+                  <a href="detail.html?imdbID=1&img=https://vignette.wikia.nocookie.net/starwars/images/3/3a/Attack_of_the_Clones_Cover.jpg/revision/latest?cb=20050501172807">
+                  <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"   src="https://vignette.wikia.nocookie.net/starwars/images/3/3a/Attack_of_the_Clones_Cover.jpg/revision/latest?cb=20050501172807" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">Attack of thhe clones</p>
+				  </div>
+				</div>			               
+                </div></a>
+     			
+     			 <a href="detail.html?imdbID=2&img=https://vignette.wikia.nocookie.net/poohadventures/images/e/ed/Otis%27_Adventures_of_Star_Wars_Episode_I.jpg/revision/latest?cb=20180123000434">
+                  <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"   src="https://vignette.wikia.nocookie.net/poohadventures/images/e/ed/Otis%27_Adventures_of_Star_Wars_Episode_I.jpg/revision/latest?cb=20180123000434" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">The  Phantom menace</p>
+				  </div>
+				</div>			               
+                </div></a>
+					
+				<a href="detail.html?imdbID=3&img=https://vignette.wikia.nocookie.net/starwars/images/7/74/EIII.JPG/revision/latest?cb=20070106193018">
+                  <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"   src="https://vignette.wikia.nocookie.net/starwars/images/7/74/EIII.JPG/revision/latest?cb=20070106193018" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">Revenge of the sith</p>
+				  </div>
+				</div>			               
+                </div></a>
+					
+					<a href="detail.html?imdbID=4&img=https://upload.wikimedia.org/wikipedia/en/b/b2/ReturnOfTheJediPoster1983.jpg">
+                  <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"   src="https://upload.wikimedia.org/wikipedia/en/b/b2/ReturnOfTheJediPoster1983.jpg" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">Return of the jedi</p>
+				  </div>
+				</div>			               
+                </div></a>
+				
+				<a href="detail.html?imdbID=5&img=https://i.jeded.com/i/star-wars-episode-v--the-empire-strikes-back.13948.jpg">
+                  <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"  src="https://i.jeded.com/i/star-wars-episode-v--the-empire-strikes-back.13948.jpg" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">The empire strikes back</p>
+				  </div>
+				</div>			               
+                </div></a>
+
+					<a href="detail.html?imdbID=6&img=https://upload.wikimedia.org/wikipedia/en/a/a2/Star_Wars_The_Force_Awakens_Theatrical_Poster.jpg">
+                  <div class="col-md-3 "id="cola" >
+                         <div class="card" style="width: 18rem;">
+               <img class="card-img-top"  src="https://upload.wikimedia.org/wikipedia/en/a/a2/Star_Wars_The_Force_Awakens_Theatrical_Poster.jpg" alt="Card image cap">
+				 <div class="card-body" id="cola2">
+				    <p class="card-text">The force awakens</p>
+				  </div>
+				</div>			               
+                </div></a>
+
+                </div>`;
+                
+            document.getElementById("disp").innerHTML = lenovo;
+
+		}
+	};
+	htx.open("GET","https://swapi.co/api/films/?format=json",true);
+	htx.send();
+
+	
+</script>
+</body>
+</html>

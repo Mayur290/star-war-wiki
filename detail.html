@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>star war details</title>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<style >
+    h1{
+		background-color: 	#373538;
+		color:	#f1eaee;
+		width:100%;
+		text-align: center;
+		font-size: 50px;
+        padding: 20px;
+
+
+	}
+	body{
+		background-color: 	#b0aaad;
+	}
+</style>
+</head>
+<body>
+<h1><div id="tit"></div></h1> 
+ <div id="disp"></div>
+ <div id="helo"></div>
+   
+
+    <script>
+   
+    var cmplt =  window.location.href;
+   
+
+    function _get(parameter , URL) {
+    var reg = new RegExp( '[?&]' + parameter + '=([^&#]*)', 'i' );
+    var string = reg.exec(URL);
+    return string ? string[1] : undefined;
+    };
+    var x = _get("imdbID",cmplt);
+    
+     console.log("x= "+x);
+        var ajax= new XMLHttpRequest();
+      ajax.onreadystatechange = function(){
+        if(this.readyState== 4  && this.status==200){
+             var user = JSON.parse(ajax.responseText);              
+                console.log("i is "+_get("imdbID",cmplt));
+
+
+                    console.log(user);
+                        console.log(_get("imdbID",cmplt));
+                document.getElementById("tit").innerHTML = user.results[x].title;
+                
+
+                 var lucky='';
+
+                  lucky+=`
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                      <img src=`+_get("img",cmplt)+` alt="Generic placeholder image" width="350" height="500">
+                  </div>
+                  <div class="col-md-8">
+                     <ul class="list-group">
+                       <li class="list-group-item bg-secondary text-white"><strong><strong>About:   </strong></strong>`+user.results[x].opening_crawl+`</li>
+                      
+                        <li class="list-group-item bg-secondary text-white"><strong>Director:   </strong>`+user.results[x].director+`</li>
+                        
+                       
+                         <li class="list-group-item bg-secondary text-white"><strong>Producer:   </strong>`+user.results[x].producer+`</li>
+
+                          <li class="list-group-item bg-secondary text-white"><strong>Release Date:   </strong>`+user.results[x].release_date+`</li>
+                       
+                     </ul>
+                    
+  
+                   </div>
+                </div>
+              </div>  
+        `;
+          
+
+         document.getElementById("helo").innerHTML= lucky;
+        }
+      };
+      
+      ajax.open("GET","https://swapi.co/api/films/?format=json",true);
+      ajax.send();
+       
+     
+ </script>
+</body>
+</html>
